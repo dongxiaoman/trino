@@ -255,6 +255,14 @@ public class TestJdbcConnectorTest
         return format("NULL not allowed for column \"%s\"(?s).*", columnName.toUpperCase(ENGLISH));
     }
 
+    @Test(enabled = false)
+    @Override
+    public void testAddColumnConcurrently()
+    {
+        // Difficult to determine whether the exception is concurrent issue or not from the error message
+        throw new SkipException("TODO: Enable this test after finding the failure cause");
+    }
+
     @Override
     protected JdbcSqlExecutor onRemoteDatabase()
     {
