@@ -390,6 +390,11 @@ public class PinotClient
         }
     }
 
+    /**
+     * Some comments
+     * @param tableName the table name
+     * @return yes
+     */
     public Map<String, Map<String, List<String>>> getRoutingTableForTable(String tableName)
     {
         Map<String, Map<String, List<String>>> routingTable = sendHttpGetToBrokerJson(tableName, format(ROUTING_TABLE_API_TEMPLATE, tableName), ROUTING_TABLE_CODEC);
